@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'penguin.png' %>
+</head>
+<body>
+<header id="header">
+<div class="headerr">
+
+  <div class="header__dynamic-width-col" exclude="tablet phone">
+            <a id="header__menu-me" class="js-toggle-profile-dropdown header__nav__link">
+              <div id="user-dropdown" class="header__nav__link__label">
+                <div class="avatar avatar--small">
+                 <% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+                </div>
+                
+              </div>
+            </a>
+        </div>
+<div id="header__logo">
+      <a href="/" id="header__logo__link">
+        <img alt="batareeq" class=".../assets/images/logo.jpg">
+</a>    </div>
+</div>
+  </header>
+  <main class="profiles show ">
+<div class = "container">
+<div class = "containerr">
+
+
+<%= yield %>
+</div>
+</div>
+</main>
+</body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</html>
