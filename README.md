@@ -1,7 +1,7 @@
-### BatareQ
+# BatareQ
 Our project is Codename Kitty <br/>
 
-#Our company components :- <br/>
+###Our company components :- <br/>
 Omar Abdel-Wanis <br/>
 Hosam El-Din Hany <br/>
 Omar Helal <br/>
