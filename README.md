@@ -1,5 +1,7 @@
-### Pending
-Well since the project is not yet chosen, so we got nothing really. <br/>
+### BatareQ
+Our project is Codename Kitty <br/>
+
+Our company components <br/>
 Omar Abdel-Wanis <br/>
 Hosam El-Din Hany <br/>
 Omar Helal <br/>
