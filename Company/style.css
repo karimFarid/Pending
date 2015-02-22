@@ -1,0 +1,109 @@
+body {
+	background-color: rgb(225, 225, 225);
+	font-family: "Segoe UI";
+}
+div.menu table {
+	width:100%;
+	background-color:  #2a394e;
+	height:100%;
+	padding: 30px;
+	text-indent: 50px;
+}
+div.menu a:link, a:visited{
+	color: white;
+	text-align: right;
+	width:100%;
+	height:100%;
+	text-decoration: none;
+	padding: 30px;
+	font-weight: bold;
+	font-size: 120%;
+}
+div.menu a:hover{
+	background-color: grey;
+	
+}
+
+div.logo h1 {
+	font-size:400%;
+	text-align: center;
+	font-family: "Calisto MT";
+	color: #2a394e;
+}
+div.logo {
+	padding: 50px;
+	width: 80%;
+	background-color: rgb(245, 245, 245);
+	height:100%;
+	margin-left: 5%;
+	border-top-style:solid;
+	border-top-color: #2a394e;
+	border-right-style: solid;
+	border-right-color: #2a394e;
+	border-left-style: solid;
+	border-left-color: #2a394e;
+}
+div.content {
+	padding: 50px;
+	width: 80%;
+	background-color: rgb(245, 245, 245);
+	height:100%;
+	margin-left: 5%;
+	border-bottom-style:solid;
+	border-bottom-color: #2a394e;
+	border-right-style: solid;
+	border-right-color: #2a394e;
+	border-left-style: solid;
+	border-left-color: #2a394e;
+	
+}
+div.content table {
+	width:100%;
+	background-color:  #2a394e;
+	height:100%;
+	padding: 30px;
+	text-indent: 50px;
+}
+div.content a:link{
+	color: #000000;
+	color: white;
+	text-align: right;
+	width:100%;
+	height:100%;
+	text-decoration: none;
+	padding: 30px;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+	
+div.basicinfo {
+	border: 2px solid;
+	padding-left:5%;
+	background-color: rgb(245, 245, 245);
+}
+div.basicinfo dt {
+	font-weight: bold;
+}
+
+div.footer {
+	background-color: rgb(245, 2245, 245);
+	margin-left: 5%;
+	margin-right:6.65%;
+	border-bottom-style:solid;
+	border-bottom-color: #2a394e;
+	border-right-style: solid;
+	border-right-color: #2a394e;
+	border-left-style: solid;
+	border-left-color: #2a394e;
+}
+div.footer a:link{
+	text-decoration: none;
+	color: #000000;
+	float: right;
+}
+div.footer a:visited{
+	text-decoration: none;
+	color: #000000;
+	float: right;
+}
