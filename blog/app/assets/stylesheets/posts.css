@@ -1,0 +1,21 @@
+.post {
+	width: 95%;
+	height: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	color: black;
+}
+
+.post .post-title {
+	font-size: 30pt;
+	font-weight: 500;
+}
+
+.post .post-body {
+	font-size: 15pt;
+}
+
+.post .post-author {
+	font-size: 20pt;
+}

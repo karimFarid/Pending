@@ -1,0 +1,73 @@
+<% require 'uri' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <h2><%= @post.title %></h2>
+</p>
+<p>
+  <strong>By </strong>
+  <%= @post.author %>
+</p>
+
+<p>
+  <% links = URI.extract(@post.body) %>
+  <% links.each do |url|%>
+    <% if url.downcase.include? 'youtube' then %>
+      <% video_id = url.split('=').last %>
+      <iframe width=720 height=480 src="http://www.youtube.com/embed/<%= video_id %>"       frameborder="0"></iframe>
+      <% @post.body.sub! url,'' %>
+    <% elsif url.downcase.ends_with? '.jpg' then %>
+      <img src= <%= url %> height="auto" width="auto">
+      <% @post.body.sub! url,'' %>
+    <% end %>
+  <% end %>
+  <%= @post.body %>
+</p>
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div>
+
+<div class="g-plus" data-action="share"></div>
+<hr />
+<h2>Comments</h2>
+<% @post.comments.reverse.each do |comment|%>
+	<p STYLE = "font-size: 15pt"><strong><%= comment.commenter%></strong><br>
+		<%= comment.body %><br>
+		</p>
+	<% comment.nested_comments.reverse.each do |nested_comment| %>
+		<p><strong><%= nested_comment.commenter%></strong><br>
+		<%= nested_comment.body %>
+		<p><%= link_to "Delete this comment", [nested_comment.comment.post, nested_comment.comment, nested_comment], method: :delete, data: {confirm: 'Are you sure?'} %></p>
+		</p><br>
+	<% end %>
+	<h4>Add a comment:</h4>
+	<%= form_for([@post, comment, comment.nested_comments.build]) do |f| %>
+  	<p>
+    	<%= f.label :body %><br>
+    	<%= f.text_area :body %>
+  	</p>
+  	<p>
+   	 	<%= f.submit "Post" %>
+  </p>
+<% end %>
+	<p align:right><%= link_to "Delete Comment", [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?' } %></p>
+
+	<br>
+	<br>
+<% end %>
+
+
+<h2>Add a comment:</h2>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Post" %>
+  </p>
+<% end %>
+
+<div class="button"><%= link_to 'Edit', edit_post_path(@post) %></div> |
+<div class="button"><%= link_to 'Back', posts_path %></div>
+
+

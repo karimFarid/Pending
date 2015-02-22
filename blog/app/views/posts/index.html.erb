@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'Posts' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<div class="post">
+<% @posts.each do |post| %>
+<div class="post-title"><h4><%= link_to post.title, post %></h4></div>
+<div class="post-author"><h6><%= post.author %></h6></div>
+<div class="post-body"><p><%= truncate post.body, length: 160 %><%= link_to 'read more', post_path(post) %></p></div>
+<div class="button"><p><%= link_to "Edit", edit_post_path(post) %></p></div>
+<div class="button"><p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p></div>
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div>
+
+<div class="g-plus" data-action="share"></div>
+<hr />
+<br>
+<br>
+<% end %>
+</div>
+
+<div class="button"><%= link_to 'New Post', new_post_path %></div>
